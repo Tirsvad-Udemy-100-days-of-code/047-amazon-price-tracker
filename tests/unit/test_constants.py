@@ -36,6 +36,12 @@ def test_env_names_are_unique() -> None:
     assert len(set(ENV_NAMES)) == len(ENV_NAMES)
 
 
+def test_default_headers_are_non_empty() -> None:
+    """Every default header has a name and a value."""
+    assert constants.DEFAULT_HEADERS
+    assert all(k.strip() and v.strip() for k, v in constants.DEFAULT_HEADERS.items())
+
+
 def test_smtp_port_is_starttls_port() -> None:
     """The SMTP port is 587."""
     assert constants.SMTP_PORT == 587

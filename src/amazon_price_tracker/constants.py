@@ -4,6 +4,8 @@
 @brief The only place that defines constants (URLs, limits, environment names).
 """
 
+from collections.abc import Mapping
+from types import MappingProxyType
 from typing import Final
 
 ## @brief Practice page used instead of Amazon while developing.
@@ -22,6 +24,30 @@ TARGET_PRICE: Final[float] = 100.0
 
 ## @brief Seconds to wait for an HTTP response.
 REQUEST_TIMEOUT_SECONDS: Final[int] = 10
+
+## @brief Browser-like request headers, read-only.
+# Copied from a real browser (see httpbin.org/headers) as the lecture says,
+# without Host and X-Amzn-Trace-Id. No br/zstd: requests may not decode them.
+DEFAULT_HEADERS: Final[Mapping[str, str]] = MappingProxyType(
+    {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+        ),
+        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "Accept": (
+            "text/html,application/xhtml+xml,application/xml;q=0.9,"
+            "image/avif,image/webp,*/*;q=0.8"
+        ),
+        "Accept-Encoding": "gzip, deflate",
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Priority": "u=0, i",
+    }
+)
 
 ## @brief SMTP submission port (STARTTLS).
 SMTP_PORT: Final[int] = 587
