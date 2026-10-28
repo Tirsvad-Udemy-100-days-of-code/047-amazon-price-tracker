@@ -42,6 +42,23 @@ def test_default_headers_are_non_empty() -> None:
     assert all(k.strip() and v.strip() for k, v in constants.DEFAULT_HEADERS.items())
 
 
+def test_selectors_and_markers_are_non_empty_tuples() -> None:
+    """Selectors and robot-check markers are non-empty tuples of text."""
+    for group in (
+        constants.PRICE_SELECTORS,
+        constants.TITLE_SELECTORS,
+        constants.ROBOT_CHECK_MARKERS,
+    ):
+        assert isinstance(group, tuple)
+        assert group
+        assert all(item.strip() for item in group)
+
+
+def test_price_selectors_try_specific_before_generic() -> None:
+    """The a-price selector comes before the bare a-offscreen one."""
+    assert constants.PRICE_SELECTORS == (".a-price .a-offscreen", ".a-offscreen")
+
+
 def test_smtp_port_is_starttls_port() -> None:
     """The SMTP port is 587."""
     assert constants.SMTP_PORT == 587
