@@ -22,7 +22,7 @@ The assignment is built in four lecture steps. Each step was delivered on its ow
 | 1 | Scrape the price from the practice page with BeautifulSoup | done |
 | 2 | E-mail alert below the target price, secrets in `.env` | done |
 | 3 | Browser-like request headers | done |
-| 4 | The live Amazon page | planned (MIL-005) |
+| 4 | The live Amazon page | done (Amazon answers with a robot check, see below) |
 
 ### Step 1: scrape the price
 
@@ -51,6 +51,16 @@ What a browser sends to [httpbin.org/headers](https://httpbin.org/headers), and 
 ![Headers sent by a browser](docs/images/step-3-browser-headers.png)
 
 ![Headers sent by the bot](docs/images/step-3-bot-headers.png)
+
+### Step 4: the live Amazon page
+
+The default product is the lecture's Amazon page (`AMAZON_URL` in `constants.py`). On 2026-10-28 the bot asked for it with the Step 3 headers and Amazon answered HTTP 200 with a robot-check page ("Click the button below to continue shopping") instead of the product, so there was no price to read. This is the outcome the lecture warns about: live pages change and Amazon may refuse scripts.
+
+The bot recognises that page (`is_robot_check` in `infrastructure/scraper.py`), stops with a clear message and does **not** try to solve or get past the check. The price and title selectors are listed in `constants.py` (`PRICE_SELECTORS`, `TITLE_SELECTORS`), so they are easy to change when Amazon changes its markup. Set `PRODUCT_URL` in your `.env` to track another page, for example the practice page `https://appbrewery.github.io/instant_pot/`, where Steps 1 to 3 work.
+
+![The page Amazon returned to the bot](docs/images/step-4-amazon-robot-check.png)
+
+![Output of the bot on the live page](docs/images/step-4-run.png)
 
 Repository layout:
 
@@ -116,7 +126,7 @@ Gmail needs 2-Step Verification and an App Password; use the App Password as `EM
 
 ## ▶️ Run
 
-Fill in your `.env` first (see Setup), then start the bot. It prints the title and the price and sends the alert when the price is below the target:
+Fill in your `.env` first (see Setup), then start the bot. It reads the product at `PRODUCT_URL` (the Amazon page unless you set another one), prints the title and the price and sends the alert when the price is below the target. Amazon currently answers with a robot check, so to see the alert work set `PRODUCT_URL="https://appbrewery.github.io/instant_pot/"` in `.env`:
 
 ```bash
 python -m amazon_price_tracker
