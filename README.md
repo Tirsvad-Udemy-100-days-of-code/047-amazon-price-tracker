@@ -20,7 +20,7 @@ The assignment is built in four lecture steps. Each step was delivered on its ow
 | Step | What it adds | Status |
 | --- | --- | --- |
 | 1 | Scrape the price from the practice page with BeautifulSoup | done |
-| 2 | E-mail alert below the target price, secrets in `.env` | planned (MIL-003) |
+| 2 | E-mail alert below the target price, secrets in `.env` | done |
 | 3 | Browser-like request headers | planned (MIL-004) |
 | 4 | The live Amazon page | planned (MIL-005) |
 
@@ -31,6 +31,16 @@ The assignment is built in four lecture steps. Each step was delivered on its ow
 ![The practice page the bot reads](docs/images/step-1-practice-page.png)
 
 ![Output of the bot: title and price as a float](docs/images/step-1-run.png)
+
+### Step 2: e-mail alert below the target
+
+`check_price` in `src/amazon_price_tracker/application/alert.py` compares the price with `TARGET_PRICE` (100) from `constants.py`. When it is lower, `SmtpNotifier` (`infrastructure/mailer.py`) connects to your SMTP server on port 587, starts TLS, logs in and sends a message with the title, the price and the link to buy. The SMTP address, e-mail address and password come from your own `.env` through `python-dotenv`, so they never appear in the code. The practice page costs 99.99, so a target of 100 triggers the alert.
+
+The screenshots below come from a run where the SMTP connection is replaced by a recording stub, so no mail is sent; the second image is rendered from the message the code builds.
+
+![Run with a stubbed SMTP connection](docs/images/step-2-run.png)
+
+![The alert message](docs/images/step-2-email.png)
 
 Repository layout:
 
@@ -96,7 +106,7 @@ Gmail needs 2-Step Verification and an App Password; use the App Password as `EM
 
 ## ▶️ Run
 
-The runnable steps are added milestone by milestone (see the table above). After step 1 the bot starts with:
+Fill in your `.env` first (see Setup), then start the bot. It prints the title and the price and sends the alert when the price is below the target:
 
 ```bash
 python -m amazon_price_tracker

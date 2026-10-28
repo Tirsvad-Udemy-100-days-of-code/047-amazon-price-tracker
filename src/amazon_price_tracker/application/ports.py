@@ -1,11 +1,12 @@
 """Ports the use cases need from the outside.
 
 @file ports.py
-@brief Protocols for fetching a page and parsing a product from it.
+@brief Protocols for fetching a page, parsing a product and sending an alert.
 """
 
 from typing import Protocol
 
+from amazon_price_tracker.domain.alert_message import AlertMessage
 from amazon_price_tracker.domain.product import Product
 
 
@@ -22,4 +23,12 @@ class ProductParser(Protocol):
 
     def parse(self, html: str) -> Product:
         """Return the product described by html."""
+        ...
+
+
+class Notifier(Protocol):
+    """Sends an alert message to the user."""
+
+    def send(self, message: AlertMessage) -> None:
+        """Deliver message to the user."""
         ...
