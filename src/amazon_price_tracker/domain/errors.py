@@ -1,7 +1,7 @@
 """Errors of the domain.
 
 @file errors.py
-@brief Exceptions raised when a product cannot be read from a page.
+@brief Exceptions raised when a product cannot be read or a setting is missing.
 """
 
 
@@ -15,3 +15,7 @@ class PriceNotFoundError(ProductParseError):
 
 class TitleNotFoundError(ProductParseError):
     """The page has no product title."""
+
+
+class MissingSettingError(Exception):
+    """A required setting is missing or empty."""
