@@ -15,7 +15,7 @@ A Python bot for Day 47 of Udemy's "100 Days of Code: The Complete Python Pro Bo
 
 ## 🧭 Overview
 
-The assignment is built in four lecture steps. Each step was delivered on its own branch and pull request, and each has a screenshot and a wiki page in English, Danish and Bahasa Malaysia that explains what it teaches.
+The assignment is built in four lecture steps. Each step was delivered on its own branch and pull request, and each has a screenshot and a [wiki](#-links) page in English, Danish and Bahasa Malaysia that explains what it teaches.
 
 | Step | What it adds | Status |
 | --- | --- | --- |
@@ -163,6 +163,7 @@ GNU Affero General Public License v3.0, see [LICENSE](LICENSE).
 - [Repository][repository]
 - [Documentation][documentation]
 - [Issue tracker][issues]
+- [Wiki in English, Danish and Bahasa Malaysia][wiki] (what we gained in each lecture step; the pages are in [`docs/wiki/`](docs/wiki/))
 
 ## 📎 Appendix: Project documents
 
@@ -184,6 +185,7 @@ The documents a newcomer needs, in reading order.
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker
 [documentation]: ./docs/
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/issues
+[wiki]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/wiki
 [agents]: ./AGENTS.md
 [BC-001]: ./docs/business-case.md
 [SA-001]: ./docs/stakeholder-analysis.md
