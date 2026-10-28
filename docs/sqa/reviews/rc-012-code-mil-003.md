@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [07b46f0] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — all Mandatory criteria pass or are not applicable.
 
 [MIL-003]: ../../milestones/mil-003-email-alert.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[07b46f0]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/07b46f0180266dc7880841031737ef8a5151d5e6
