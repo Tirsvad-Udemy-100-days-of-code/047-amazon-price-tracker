@@ -21,7 +21,7 @@ The assignment is built in four lecture steps. Each step was delivered on its ow
 | --- | --- | --- |
 | 1 | Scrape the price from the practice page with BeautifulSoup | done |
 | 2 | E-mail alert below the target price, secrets in `.env` | done |
-| 3 | Browser-like request headers | planned (MIL-004) |
+| 3 | Browser-like request headers | done |
 | 4 | The live Amazon page | planned (MIL-005) |
 
 ### Step 1: scrape the price
@@ -41,6 +41,16 @@ The screenshots below come from a run where the SMTP connection is replaced by a
 ![Run with a stubbed SMTP connection](docs/images/step-2-run.png)
 
 ![The alert message](docs/images/step-2-email.png)
+
+### Step 3: request headers
+
+A browser sends headers with every request: the browser and system (`User-Agent`), the preferred language (`Accept-Language`) and more. A bare script sends almost none, so a server can answer in the wrong language or currency, or treat the request as a bot. `DEFAULT_HEADERS` in `constants.py` holds the browser-like set (without `Host` and `X-Amzn-Trace-Id`, as the lecture says) and `RequestsPageFetcher` passes it as `headers=` to `requests.get`.
+
+What a browser sends to [httpbin.org/headers](https://httpbin.org/headers), and what the bot sends (`Host` is added by `requests` itself):
+
+![Headers sent by a browser](docs/images/step-3-browser-headers.png)
+
+![Headers sent by the bot](docs/images/step-3-bot-headers.png)
 
 Repository layout:
 
