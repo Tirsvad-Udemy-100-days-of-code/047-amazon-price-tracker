@@ -19,10 +19,18 @@ The assignment is built in four lecture steps. Each step was delivered on its ow
 
 | Step | What it adds | Status |
 | --- | --- | --- |
-| 1 | Scrape the price from the practice page with BeautifulSoup | planned (MIL-002) |
+| 1 | Scrape the price from the practice page with BeautifulSoup | done |
 | 2 | E-mail alert below the target price, secrets in `.env` | planned (MIL-003) |
 | 3 | Browser-like request headers | planned (MIL-004) |
 | 4 | The live Amazon page | planned (MIL-005) |
+
+### Step 1: scrape the price
+
+`get_title(html)` and `get_price(html)` in `src/amazon_price_tracker/infrastructure/scraper.py` use BeautifulSoup on the [practice page](https://appbrewery.github.io/instant_pot/). The price element has the class `a-offscreen` and its text is `$99.99`; `split("$")` removes the currency sign and `float()` returns `99.99`.
+
+![The practice page the bot reads](docs/images/step-1-practice-page.png)
+
+![Output of the bot: title and price as a float](docs/images/step-1-run.png)
 
 Repository layout:
 
