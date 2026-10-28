@@ -17,5 +17,13 @@ class TitleNotFoundError(ProductParseError):
     """The page has no product title."""
 
 
+class RobotCheckError(ProductParseError):
+    """The page is a robot check, not a product page."""
+
+
 class MissingSettingError(Exception):
     """A required setting is missing or empty."""
+
+
+class InvalidSettingError(Exception):
+    """A setting has a value that is not allowed."""

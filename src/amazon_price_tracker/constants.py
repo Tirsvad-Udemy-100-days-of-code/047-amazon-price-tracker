@@ -49,6 +49,22 @@ DEFAULT_HEADERS: Final[Mapping[str, str]] = MappingProxyType(
     }
 )
 
+## @brief CSS selectors for the price, tried in order.
+# The first one skips decoy .a-offscreen spans (coupons) outside .a-price;
+# the second serves the practice page.
+PRICE_SELECTORS: Final[tuple[str, ...]] = (".a-price .a-offscreen", ".a-offscreen")
+
+## @brief CSS selectors for the product title, tried in order.
+TITLE_SELECTORS: Final[tuple[str, ...]] = ("#productTitle",)
+
+## @brief Text found only on Amazon's robot-check page.
+ROBOT_CHECK_MARKERS: Final[tuple[str, ...]] = (
+    "/errors_page/validateCaptcha",
+    "Click the button below to continue shopping",
+    "Enter the characters you see below",
+    "api-services-support@amazon.com",
+)
+
 ## @brief SMTP submission port (STARTTLS).
 SMTP_PORT: Final[int] = 587
 

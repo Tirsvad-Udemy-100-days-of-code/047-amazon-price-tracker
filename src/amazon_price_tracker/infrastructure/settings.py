@@ -8,11 +8,13 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 
 from amazon_price_tracker.constants import (
+    AMAZON_URL,
     ENV_EMAIL_ADDRESS,
     ENV_EMAIL_PASSWORD,
+    ENV_PRODUCT_URL,
     ENV_SMTP_ADDRESS,
 )
-from amazon_price_tracker.domain.errors import MissingSettingError
+from amazon_price_tracker.domain.errors import InvalidSettingError, MissingSettingError
 
 
 @dataclass(frozen=True, slots=True)
@@ -29,6 +31,22 @@ def _require(environ: Mapping[str, str], name: str) -> str:
     value = environ.get(name, "")
     if not value.strip():
         raise MissingSettingError(f"Missing setting: {name}")
+    return value
+
+
+def load_product_url(environ: Mapping[str, str]) -> str:
+    """Return the product URL from environ, or the Amazon default.
+
+    @param environ Environment variables, for example os.environ.
+    @return The URL, stripped.
+    @throws InvalidSettingError When the value does not start with https://.
+    """
+    value = environ.get(ENV_PRODUCT_URL, "").strip()
+    if not value:
+        return AMAZON_URL
+    if not value.startswith("https://"):
+        # The value is not echoed: it may be long or carry a token.
+        raise InvalidSettingError(f"Invalid setting: {ENV_PRODUCT_URL} must be https")
     return value
 
 
