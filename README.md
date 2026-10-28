@@ -1,2 +1,156 @@
-# 047-amazon-price-tracker
+# 🚀 Amazon Price Tracker
 
+A Python bot for Day 47 of Udemy's "100 Days of Code: The Complete Python Pro Bootcamp": it reads a product page, extracts the price and sends an e-mail alert when the price drops below a target. Made for course participants who want to compare solutions and for visitors who browse for ideas.
+
+## 📚 Table of Contents
+
+- [Overview](#-overview)
+- [Requirements](#-requirements)
+- [Setup](#-setup)
+- [Run](#-run)
+- [Tests](#-tests)
+- [License](#-license)
+- [Links](#-links)
+- [Appendix: Project documents](#-appendix-project-documents)
+
+## 🧭 Overview
+
+The assignment is built in four lecture steps. Each step was delivered on its own branch and pull request, and each has a screenshot and a wiki page in English, Danish and Bahasa Malaysia that explains what it teaches.
+
+| Step | What it adds | Status |
+| --- | --- | --- |
+| 1 | Scrape the price from the practice page with BeautifulSoup | planned (MIL-002) |
+| 2 | E-mail alert below the target price, secrets in `.env` | planned (MIL-003) |
+| 3 | Browser-like request headers | planned (MIL-004) |
+| 4 | The live Amazon page | planned (MIL-005) |
+
+Repository layout:
+
+| Path | What it is for |
+| --- | --- |
+| `src/amazon_price_tracker/` | The package; `constants.py` is the only place for constants |
+| `tests/` | `pytest` tests; they never use the network or a real mail server |
+| `docs/` | Project documents (Business Case, plan, milestones, reviews) and the wiki pages |
+| `Doxyfile` | Doxygen configuration for the source comments |
+| `.env.example` | The settings you put in your own `.env` |
+
+## 📋 Requirements
+
+- Python 3.13 or newer.
+- Runtime packages (installed by `pip`): `requests`, `beautifulsoup4`, `python-dotenv`. Nothing else is needed to run the bot.
+- Optional, for development: `pytest`, `ruff`, `mypy` (the `dev` extra) and [Doxygen](https://www.doxygen.nl/) for the API documentation.
+
+## 🛠️ Setup
+
+Create a local virtual environment named `.venv`, activate it and upgrade `pip`:
+
+```bash
+python -m venv .venv
+```
+
+Activate it (Linux and macOS):
+
+```bash
+source .venv/bin/activate
+```
+
+Activate it (Windows PowerShell):
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Activate it (Windows Git Bash):
+
+```bash
+source .venv/Scripts/activate
+```
+
+Upgrade `pip` and install the project with the development tools:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+For use without development tools, install with `python -m pip install -e .`.
+
+Create your own settings file from the example and fill in the values. `.env` is ignored by git; never commit it:
+
+```bash
+cp .env.example .env
+```
+
+Gmail needs 2-Step Verification and an App Password; use the App Password as `EMAIL_PASSWORD`. SMTP addresses: Gmail `smtp.gmail.com`, Hotmail `smtp.live.com`, Outlook `outlook.office365.com`, Yahoo `smtp.mail.yahoo.com`. The bot connects on port 587.
+
+## ▶️ Run
+
+The runnable steps are added milestone by milestone (see the table above). After step 1 the bot starts with:
+
+```bash
+python -m amazon_price_tracker
+```
+
+## 🧪 Tests
+
+```bash
+python -m pytest
+```
+
+Lint and type checks:
+
+```bash
+ruff check .
+```
+
+```bash
+mypy
+```
+
+Build the API documentation (written to `docs/doxygen/`, which is git-ignored):
+
+```bash
+doxygen Doxyfile
+```
+
+## 📄 License
+
+GNU Affero General Public License v3.0, see [LICENSE](LICENSE).
+
+## 🔗 Links
+
+- [Repository][repository]
+- [Documentation][documentation]
+- [Issue tracker][issues]
+
+## 📎 Appendix: Project documents
+
+The documents a newcomer needs, in reading order.
+
+| Document | What it tells you |
+| --- | --- |
+| [AGENTS.md][agents] | The rules AI agents follow in this repository |
+| [Business Case][BC-001] | Why the project exists, its scope and success criteria |
+| [Stakeholder Analysis][SA-001] | Who is involved; the stakeholder IDs used for owners and reviewers |
+| [Project Plan][PP-001] | The gateways and their schedule |
+| [Milestones][milestones] | One document per gateway: Go/No-Go criteria and tasks |
+| [Artifact registry][registry] | Where each artifact type lives, the next version, the PO language and domain |
+| [Framework README][framework-readme] | The framework this project uses |
+| [Framework changelog][framework-changelog] | What changed in each framework release |
+
+---
+
+[repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker
+[documentation]: ./docs/
+[issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/issues
+[agents]: ./AGENTS.md
+[BC-001]: ./docs/business-case.md
+[SA-001]: ./docs/stakeholder-analysis.md
+[PP-001]: ./docs/project-plan.md
+[milestones]: ./docs/milestones/
+[registry]: ./docs/artifact-registry.md
+[framework-readme]: ./framework/README.md
+[framework-changelog]: ./framework/CHANGELOG.md
