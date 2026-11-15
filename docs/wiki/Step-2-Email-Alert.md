@@ -1,6 +1,6 @@
-# Step 2: e-mail alert
-
 🌐 **English** · [Dansk](Step-2-Email-Alert-da) · [Bahasa Melayu](Step-2-Email-Alert-ms)
+
+# Step 2: e-mail alert
 
 **Assignment.** When the price is below a target (100), send an e-mail to yourself with the product title, the price and a link to buy it. Keep the e-mail address and password out of the code.
 

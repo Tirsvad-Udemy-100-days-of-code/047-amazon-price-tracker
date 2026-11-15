@@ -70,7 +70,9 @@ Repository layout:
 | `tests/` | `pytest` tests; they never use the network or a real mail server |
 | `docs/` | Project documents (Business Case, plan, milestones, reviews) and the wiki pages |
 | `Doxyfile` | Doxygen configuration for the source comments |
-| `.env.example` | The settings you put in your own `.env` |
+| `framework/` | The SQA and QC framework (a git submodule) that the project documents follow |
+| `.editorconfig` | The editor settings of the framework baseline |
+| `.env.example` | The settings you put in your own `.env`, and placeholders for the git host tokens that the framework scripts read (the program does not read those) |
 
 ## 📋 Requirements
 
@@ -132,6 +134,8 @@ Fill in your `.env` first (see Setup), then start the bot. It reads the product 
 python -m amazon_price_tracker
 ```
 
+Automated access to a shop site may be against that site's terms of use. Read the terms of the site before you run the bot against it, and do not try to get past a robot check.
+
 ## 🧪 Tests
 
 ```bash
@@ -156,7 +160,7 @@ doxygen Doxyfile
 
 ## 📄 License
 
-GNU Affero General Public License v3.0, see [LICENSE](LICENSE).
+The project is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see the [LICENSE](LICENSE) file.
 
 ## 🔗 Links
 
@@ -171,14 +175,12 @@ The documents a newcomer needs, in reading order.
 
 | Document | What it tells you |
 | --- | --- |
-| [AGENTS.md][agents] | The rules AI agents follow in this repository |
 | [Business Case][BC-001] | Why the project exists, its scope and success criteria |
 | [Stakeholder Analysis][SA-001] | Who is involved; the stakeholder IDs used for owners and reviewers |
 | [Project Plan][PP-001] | The gateways and their schedule |
 | [Milestones][milestones] | One document per gateway: Go/No-Go criteria and tasks |
 | [Artifact registry][registry] | Where each artifact type lives, the next version, the PO language and domain |
-| [Framework README][framework-readme] | The framework this project uses |
-| [Framework changelog][framework-changelog] | What changed in each framework release |
+| [Traceability matrix][TM-001] | How the artifacts link and when each was last reviewed |
 
 ---
 
@@ -186,11 +188,9 @@ The documents a newcomer needs, in reading order.
 [documentation]: ./docs/
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/issues
 [wiki]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/wiki
-[agents]: ./AGENTS.md
 [BC-001]: ./docs/business-case.md
 [SA-001]: ./docs/stakeholder-analysis.md
 [PP-001]: ./docs/project-plan.md
 [milestones]: ./docs/milestones/
 [registry]: ./docs/artifact-registry.md
-[framework-readme]: ./framework/README.md
-[framework-changelog]: ./framework/CHANGELOG.md
+[TM-001]: ./docs/sqa/traceability-matrix.md

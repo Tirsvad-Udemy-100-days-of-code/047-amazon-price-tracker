@@ -1,6 +1,6 @@
-# Step 3: request headers
-
 🌐 **English** · [Dansk](Step-3-Request-Headers-da) · [Bahasa Melayu](Step-3-Request-Headers-ms)
+
+# Step 3: request headers
 
 **Assignment.** Send browser-like headers with the request: at least `User-Agent` and `Accept-Language`.
 

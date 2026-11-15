@@ -4,14 +4,15 @@
 | Key | Value |
 | --- | --- |
 | ID | BC-001 |
-| CrossReference | |
+| CrossReference | [SA-001], [PP-001], [MIL-007] |
 | Language | en |
-| Domain | it |
+| Domain | education |
 
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version<br>Accepted after review (RC-001 Go) | [f9765fd] |
+| 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version<br>Accepted after review (RC-001 Go) | [f9765fd] |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 7, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-007; set the domain to education; reviewed in autonomous mode, not independent | [8e0d0cf] |
 
 ---
 
@@ -39,6 +40,7 @@ A bot that checks the price on its own and sends an alert lets the participant b
 4. Send browser-like request headers (`User-Agent`, `Accept-Language`, and the rest of the course set).
 5. Try the same code on the live Amazon page and document what happens.
 6. Publish the repository with description, topics, README and a wiki in English, Danish and Bahasa Malaysia, with a screenshot for each lecture step.
+7. Bring the finished project to the common baseline of the framework: the adopted framework release, a wiki that follows the framework's page and language-line rules, licence and project URL metadata, a README that lists only the documents of the repository, a traceability matrix and review records for every changed document ([MIL-007]).
 
 ## Scope
 
@@ -47,6 +49,7 @@ A bot that checks the price on its own and sends an alert lets the participant b
 - Python 3.13 or newer, `venv`, `pyproject.toml`, `pytest`, `constants.py`, Doxygen comments and `Doxyfile`.
 - The four lecture steps, each delivered by its own branch and pull request.
 - README from the framework template and a three-language wiki explaining what each step teaches.
+- The baseline milestone [MIL-007]: the framework release, the wiki in the framework's shape (language line first on each page),  the README without the private framework files in its appendix, licence and project URL metadata, `.editorconfig`, `.env.example`, review records and a traceability matrix. It changes no behaviour of the program.
 
 ### Out of Scope
 
@@ -54,6 +57,7 @@ A bot that checks the price on its own and sends an alert lets the participant b
 - Solving Amazon CAPTCHAs (Completely Automated Public Turing tests, the robot-check pages) or evading bot detection.
 - A user interface or a database.
 - Importing, testing or committing the personal `.env` of the repository owner.
+- Any change to `src/` or `tests/` in the baseline milestone [MIL-007]. No page of a shop site is requested and no e-mail is sent in that milestone; the tests use saved pages and a fake mail connection.
 
 ## Expected Benefits
 
@@ -81,6 +85,7 @@ The project supports the participant's learning goal in the 100 Days of Code cou
 | 4 | Test suite | All tests pass without network access | `python -m pytest` exits 0 |
 | 5 | Documentation | README, wiki in `en`, `da`, `ms`, one screenshot per step | Files exist and are linked |
 | 6 | Repository metadata | Description and at least five topics set on the host | Read back from the host API |
+| 7 | The baseline milestone is done (objective 7) | Every wiki page starts with its language line, the wiki has a review record, `framework/scripts/check-readme.sh`, `check-languages.sh` and `check-editorconfig.sh` exit with code 0, `python -m pytest` passes, 100 % of the continuous integration (CI) checks of the pull request of [MIL-007] pass | Files in `docs/`, the script exit codes and the pull request status on the git host |
 
 ## Risks
 
@@ -90,6 +95,7 @@ The project supports the participant's learning goal in the 100 Days of Code cou
 | A token or password is committed | Credential leak | `.env` in `.gitignore`; tokens are read from `.env` only for repository set-up and never copied into the project |
 | The practice page changes | A test breaks | Tests use a saved copy of the page |
 | Sending real e-mail by accident | Unwanted mail | Tests mock SMTP; the sender is called only from `main` |
+| The documents of the baseline milestone [MIL-007] change documents that were accepted earlier, and the AI stand-in for S01 reviews them | A defect is missed because the review is not independent | Every review record of the baseline says `Mode: autonomous, not independent`, `src/` and `tests/` are not changed, the tests run before and after, and the end-of-run summary lists the reviews for challenge |
 
 ## Assumptions
 
@@ -104,6 +110,8 @@ The project supports the participant's learning goal in the 100 Days of Code cou
 - Layout `src/`, `tests/`, `docs/`; constants in `constants.py`.
 - One branch and pull request per milestone.
 - No GUI is involved, so no GUI test environment is needed.
+- The baseline milestone [MIL-007] starts 2026-11-16 and is finished within one week, by 2026-11-23. For that milestone only, an AI stand-in for S01 reviews and accepts the changed documents.
+- The Product Owner (PO) language is English and the PO domain is education (it was IT until [MIL-007]; the documents that [MIL-007] does not change keep the domain `it`, see the Open Issues of [PP-001]).
 
 ## Cost–Benefit Assessment
 
@@ -128,3 +136,7 @@ Proceed — the scope is small, the cost is low and every objective is testable.
 ---
 
 [f9765fd]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/f9765fd3743f46c189359e713fd050c8e1a598b6
+[SA-001]: ./stakeholder-analysis.md
+[PP-001]: ./project-plan.md
+[MIL-007]: ./milestones/mil-007-framework-baseline.md
+[8e0d0cf]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/8e0d0cf1a04f59b594b6f7ece460568df08225d1

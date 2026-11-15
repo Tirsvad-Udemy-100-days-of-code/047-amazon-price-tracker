@@ -1,6 +1,6 @@
-# Step 4: the live Amazon page
-
 🌐 **English** · [Dansk](Step-4-Live-Amazon-da) · [Bahasa Melayu](Step-4-Live-Amazon-ms)
+
+# Step 4: the live Amazon page
 
 **Assignment.** Point the code at the real Amazon product page and print the price and the title.
 

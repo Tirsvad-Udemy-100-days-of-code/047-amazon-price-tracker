@@ -1,6 +1,6 @@
-# Langkah 1: ambil harga
-
 🌐 [English](Step-1-Scrape-the-Price) · [Dansk](Step-1-Scrape-the-Price-da) · **Bahasa Melayu**
+
+# Langkah 1: ambil harga
 
 **Tugasan.** Gunakan BeautifulSoup untuk mendapatkan harga Instant Pot di halaman latihan sebagai nombor perpuluhan dan cetaknya.
 
