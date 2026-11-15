@@ -1,6 +1,6 @@
-# Trin 2: e-mail-alarm
-
 🌐 [English](Step-2-Email-Alert) · **Dansk** · [Bahasa Melayu](Step-2-Email-Alert-ms)
+
+# Trin 2: e-mail-alarm
 
 **Opgave.** Når prisen er under en målpris (100), send en e-mail til dig selv med produktets titel, prisen og et link til at købe det. Hold e-mailadresse og adgangskode ude af koden.
 

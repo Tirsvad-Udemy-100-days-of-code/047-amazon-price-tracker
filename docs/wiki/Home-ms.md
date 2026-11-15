@@ -1,6 +1,6 @@
-# Amazon Price Tracker
-
 🌐 [English](Home) · [Dansk](Home-da) · **Bahasa Melayu**
+
+# Amazon Price Tracker
 
 Bot Python untuk Hari ke-47 kursus Udemy "100 Days of Code: The Complete Python Pro Bootcamp". Ia membaca halaman produk, mengambil harga dan menghantar e-mel apabila harga berada di bawah harga sasaran. Tugasan ini mempunyai empat langkah; setiap langkah ada halaman di sini yang menunjukkan apa yang dibina, tangkapan skrin dan **apa yang kita perolehi**.
 

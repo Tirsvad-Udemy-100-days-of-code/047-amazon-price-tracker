@@ -1,6 +1,6 @@
-# Langkah 2: amaran e-mel
-
 🌐 [English](Step-2-Email-Alert) · [Dansk](Step-2-Email-Alert-da) · **Bahasa Melayu**
+
+# Langkah 2: amaran e-mel
 
 **Tugasan.** Apabila harga di bawah sasaran (100), hantar e-mel kepada diri sendiri dengan tajuk produk, harga dan pautan untuk membelinya. Jauhkan alamat e-mel dan kata laluan daripada kod.
 

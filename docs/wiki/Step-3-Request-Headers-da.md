@@ -1,6 +1,6 @@
-# Trin 3: request headers
-
 🌐 [English](Step-3-Request-Headers) · **Dansk** · [Bahasa Melayu](Step-3-Request-Headers-ms)
+
+# Trin 3: request headers
 
 **Opgave.** Send browser-lignende headers med forespørgslen: mindst `User-Agent` og `Accept-Language`.
 

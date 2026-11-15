@@ -64,4 +64,5 @@ Go — all Mandatory criteria pass; the Cost-Benefit assessment is qualitative w
 
 [BC-001]: ../../business-case.md
 [QC-BC-001]: ../../../framework/qc/artifacts/qc-business-case.md
+[QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
 [f9765fd]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/f9765fd3743f46c189359e713fd050c8e1a598b6

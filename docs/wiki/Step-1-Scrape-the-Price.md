@@ -1,6 +1,6 @@
-# Step 1: scrape the price
-
 🌐 **English** · [Dansk](Step-1-Scrape-the-Price-da) · [Bahasa Melayu](Step-1-Scrape-the-Price-ms)
+
+# Step 1: scrape the price
 
 **Assignment.** Use BeautifulSoup to get the price of the Instant Pot on the practice page as a floating point number and print it.
 
