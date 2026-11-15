@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version<br>Accepted after review (RC-001 Go) | [f9765fd] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 7, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-007; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 7, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-007; set the domain to education; reviewed in autonomous mode, not independent | [8e0d0cf] |
 
 ---
 
@@ -139,3 +139,4 @@ Proceed — the scope is small, the cost is low and every objective is testable.
 [SA-001]: ./stakeholder-analysis.md
 [PP-001]: ./project-plan.md
 [MIL-007]: ./milestones/mil-007-framework-baseline.md
+[8e0d0cf]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/8e0d0cf1a04f59b594b6f7ece460568df08225d1

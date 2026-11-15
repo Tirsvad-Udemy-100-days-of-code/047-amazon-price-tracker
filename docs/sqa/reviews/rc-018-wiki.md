@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial review record; verdict Go-with-conditions (autonomous, not independent) | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial review record; verdict Go-with-conditions (autonomous, not independent) | [8e0d0cf] |
 
 ---
 
@@ -57,3 +57,4 @@ Go-with-conditions — every Mandatory criterion passes except criterion 14, whi
 
 [WIKI]: ../../wiki/
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
+[8e0d0cf]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/8e0d0cf1a04f59b594b6f7ece460568df08225d1

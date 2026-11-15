@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version; created with the baseline milestone and its review records (autonomous, not independent) | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version; created with the baseline milestone and its review records (autonomous, not independent) | [8e0d0cf] |
 
 ---
 
@@ -88,3 +88,4 @@ Tracks backward and forward links between the artifact instances of Amazon Price
 [RC-016]: ./reviews/rc-016-project-plan-baseline.md
 [RC-017]: ./reviews/rc-017-milestone-007.md
 [RC-018]: ./reviews/rc-018-wiki.md
+[8e0d0cf]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/047-amazon-price-tracker/commit/8e0d0cf1a04f59b594b6f7ece460568df08225d1
